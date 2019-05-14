@@ -1,0 +1,3 @@
+recursive-include limis *.conf
+recursive-include limis *.ini
+recursive-include limis/resources *

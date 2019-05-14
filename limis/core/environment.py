@@ -1,0 +1,7 @@
+"""
+limis core - environment
+
+Environment variables set for a project.
+"""
+LIMIS_PROJECT_NAME_ENVIRONMENT_VARIABLE = 'LIMIS_PROJECT_NAME'
+LIMIS_PROJECT_SETTINGS_ENVIRONMENT_VARIABLE = 'LIMIS_PROJECT_SETTINGS'

@@ -1,0 +1,5 @@
+[run]
+omit =
+    docs/*
+    venv/*
+    test_project/*

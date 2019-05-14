@@ -1,0 +1,20 @@
+language: python
+dist: xenial
+python:
+  - '3.5'
+  - '3.6'
+  - '3.7'
+env:
+  - TORNADO=5.0
+  - TORNADO=5.1
+  - TORNADO=6.0
+install:
+  - pip install -q tornado==$TORNADO
+  - pip install -q -r tests/requirements.txt
+script: coverage run -m unittest
+after_success:
+  - coverage xml
+  - codecov -t $CODECOV_TOKEN
+notifications:
+  slack:
+    secure: Oje2gYv6SHqPRz3/9hSRvZMHLvpZbCDFT1x8SrPgdI7RtdLKX/V7YZd/yMW8+q+rgpjLt8/725NA9ovLrI38XnKxMQESgiAJrrQNdj0/N0ie+cF2uqnRzLKSDCt6s0tdqbqx8oOOJ2okNEnVfNunS8ZJEOSGBGCqmUB/vm3d9AA6zQERuopbDoGc9AXkl9M7iyJMPpzwZX83U4gG+ZBHOz6EvjTAxLifhZumUQTgAwjCNdfspe+awSnIM5WxSiawDNBHj+pierLJdFf6y1O5b6ICjoCMShCa1sklF1TkYrTShghcmskDxsKCyN6AAROU6KmVfJbh2V0ue9e7nWK7TsMX2AYdNmQ0Ie8lvi5u9hzcOd95lSwc34sLTK3cnRTp0wLPWSG4Hd4CCMLGR9qQYQwEXwsn0xgO+1vBuY7rRMdhVKjUkBTTuXVZnYCafWJSG3dKyaj451OESZQQI6IgNuviiklqQxGSrZTzU7XBgOgb++PEWt2NdzaQUSr6KQlUCRimDhGWOAxvKR3it9B6dVDDLKEhZ1y3b0qOHf1XSYCEDbVRjGcrqLGg8tUvjZGnU1O6ZFsBd9KTNAv63U5FEhk0q9+rU2NShmYgXZvOv6izt0aGBpNPWWjN6oNThDCUzMoOUpKA5o2zCrht6ee2Vkq1DoWOjF7HJyMCsIwx0aI=
