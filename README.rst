@@ -1,22 +1,13 @@
 limis
 =====
-.. image:: https://travis-ci.org/limis-project/limis.svg?branch=master
-    :alt: limis build status
-    :target: https://travis-ci.org/limis-project/limis
-
-.. image:: https://codecov.io/gh/limis-project/limis/branch/master/graph/badge.svg
-    :alt: limis coverage status
-    :target: https://codecov.io/gh/limis-project/limis
-
 limis is a light microservice framework built in `Python <https://www.python.org/>`_ and powered by
 `Tornado <https://www.tornadoweb.org/>`_.
 
 .. warning::
-    The project is currently in active development and should be considered alpha grade at the moment. Features are
-    being added and removed and expect the API to change frequently. Release 0.1 is targeted to be a more stable
-    release.
+    The project is not currently in active development and should be considered alpha grade at the moment. Features are
+    being added and removed and expect the API to change.
 
-Examples: limis examples can be found on github at `limis_examples <https://github.com/limis-project/limis_examples>`_
+Examples: limis examples can be found on github at `limis_examples <https://github.com/pstreck/limis_examples>`_
 
 Architecture
 ------------
@@ -28,9 +19,6 @@ controller is similar in design to the commonly used
 `model - view - controller <(https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller>`_ pattern used for
 developing graphical user interfaces and web applications.
 
-.. image:: https://limis.io/handler-component-controller.svg
-    :alt: limis component
-
 Component
 ~~~~~~~~~
 Components within limis are called by a handler to perform an action. When an action is called the component invokes the
@@ -40,18 +28,12 @@ driven message to the consumer. Components are stateless, but may receive state 
 controller. Component interceptors provide a facility for hooks that are applied to all actions. Some interceptors
 built into limis are facilities for authorization, caching, request validation and logging.
 
-.. image:: https://limis.io/component.svg
-    :alt: limis component
-
 Deployment Pattern
 ~~~~~~~~~~~~~~~~~~
 Deployment can be done in multiple ways. limis is designed without a specific cloud vendor in mind and is capable of
 running in container model or serverless model. Services may be bundled into a single run-time container to optimize
 cloud usage. A service registry performs discovery at the client and server side and an API gateway provides
 authentication and routing.
-
-.. image:: https://limis.io/deployment-pattern.svg
-    :alt: limis deployment pattern
 
 Instructions
 ------------
